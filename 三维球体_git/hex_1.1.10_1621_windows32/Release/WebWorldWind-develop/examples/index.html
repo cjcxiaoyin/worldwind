@@ -17,7 +17,6 @@
 	
     <!--script src="lib/jquery-1.8.1.min.js" type="text/javascript"></script-->
 	<script src="BasicExample/js/BasicExample_jquery.min.js" type="text/javascript"></script>
-    
     <script src="JS/c_bootstrap.min.js"></script>
 	<script src="JS/jquery-ui.min.js" type="text/javascript"></script>
     <script data-main="index" src="BasicExample/js/BasicExample_require.min.js"></script>
@@ -108,10 +107,10 @@
 						<a href="javascript:void(0);" onclick="removeDibiao()" class="a_right">
 							<em class="icon-dashboard"></em>删除地标
 						</a></br>
-						<a href="javascript:void(0);" onclick=""> 
+						<a href="javascript:void(0);" onclick="addShapes_cjc()"> 
 							<em class="icon-dashboard"></em>添加图形
 						</a>
-						<a href="javascript:void(0);" onclick="" class="a_right">
+						<a href="javascript:void(0);" onclick="removeShapes_cjc()" class="a_right">
 							<em class="icon-dashboard"></em>删除图形
 						</a></br>
 						<a href="javascript:void(0);" onclick="addPath()"> 
@@ -122,16 +121,15 @@
 						</a></br>
                       	<a href="#"><em class="icon-dashboard"></em>模拟动画</a></br> 
                         <a href="#"><em class="icon-dashboard"></em>历史影像</a></br>
-                      	<a href="#"><em class="icon-dashboard"></em>太阳</a></br>
-						<a href="#"><em class="icon-dashboard"></em>全幅</a></br>
-                      	<a href="#"><em class="icon-dashboard"></em>清除</a></br>
-						<a href="#"><em class="icon-dashboard"></em>定位</a></br>
-                      	<a href="#"><em class="icon-dashboard"></em>当前视图截图</a></br> 
+						<a href="javascript:void(0);" onclick="quanFu()"><em class="icon-dashboard"></em>全幅</a></br>
+                      	<a href="javascript:void(0);" onclick="shuaXin()"><em class="icon-dashboard"></em>刷新</a></br>
+						<a href="javascript:void(0);" onclick="ipDingwei()"><em class="icon-dashboard"></em>定位</a></br>
+                      	<a href="javascript:void(0);" onclick="jiePing()" id="down_button"><em class="icon-dashboard"></em>当前视图截图</a></br> 
                   </ul>
                   <div class="nav-header" data-toggle="collapse" data-target="#bianji-menu">
 					  <em class="icon-dashboard"></em>视图   
                   </div>
-                    <ul id="bianji-menu" class="nav nav-list collapse in">
+                    <ul id="bianji-menu" class="nav nav-list collapse">
                       	<div class="col-sm-3">
             				<h4>Projection</h4>
             				<div class="dropdown" id="projectionDropdown">

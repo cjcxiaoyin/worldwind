@@ -21,19 +21,29 @@
 		var placemarkLayer=[];
 		var layerCount_01=0;
 		var layerCount_02=0;
+		var layerCount_03=0;
 		var clickRecognizer_cjc;
 		var pathPositions = [];
+		var shapePositions=[];
 		var pathsLayer=[];
+		var shapeLayer=[];
 		var starPush=false;
-	
+		var isNeedstop=false;
+		var isStaraddshapes=false;
+		var shapeFinish=false;
+		var shapesLayer;
+
+
+
+
+		
  requirejs(['./WorldWindShim',
         './LayerManager'],
     function (WorldWind,
               LayerManager) {
         "use strict";
-
-        WorldWind.Logger.setLoggingLevel(WorldWind.Logger.LEVEL_WARNING);
-
+		
+        WorldWind.Logger.setLoggingLevel(WorldWind.Logger.LEVEL_NONE);
         wwd = new WorldWind.WorldWindow("canvasOne");
 		wwd.goTo(new WorldWind.Position(39.92, 116.37, 20000000));
 
@@ -101,9 +111,42 @@
 				pathsLayer[layerCount_02].addRenderable(path);
 				wwd.addLayer(pathsLayer[layerCount_02]);
 				layerCount_02++;
+				isNeedstop=true;
+			}	
+
+			if(isStaraddshapes){
+				shapePositions.push(new WorldWind.Location(cjc_location.latitude, cjc_location.longitude, 1e4));
+				var path = new WorldWind.Path(shapePositions, null);
+				path.altitudeMode = WorldWind.RELATIVE_TO_GROUND;
+				path.followTerrain = true;
+				path.extrude = true; // make it a curtain
+				path.useSurfaceShapeFor2D = true; // use a surface shape in 2D mode
+
+				// Create and assign the path's attributes.
+				var pathAttributes = new WorldWind.ShapeAttributes(null);
+				pathAttributes.outlineColor = WorldWind.Color.BLUE;
+				pathAttributes.interiorColor = new WorldWind.Color(0, 1, 1, 0.5);
+				pathAttributes.drawVerticals = path.extrude; // draw verticals only when extruding
+				path.attributes = pathAttributes;
+
+				// Create and assign the path's highlight attributes.
+				var highlightAttributes = new WorldWind.ShapeAttributes(pathAttributes);
+				highlightAttributes.outlineColor = WorldWind.Color.RED;
+				highlightAttributes.interiorColor = new WorldWind.Color(1, 1, 1, 0.5);
+				path.highlightAttributes = highlightAttributes;
+
+				// Add the path to a layer and the layer to the WorldWindow's layer list.
+				shapeLayer[layerCount_03] = new WorldWind.RenderableLayer();
+				//pathsLayer[layerCount_02].displayName = "Paths";
+				shapeLayer[layerCount_03].addRenderable(path);
+				wwd.addLayer(shapeLayer[layerCount_03]);
+				layerCount_03++;
+				shapeFinish=true;
+				isNeedstop=true;
 			}
         };
 
+		
         // Listen for mouse clicks.
         var clickRecognizer = new WorldWind.ClickRecognizer(wwd, handleClick);
 
@@ -115,7 +158,31 @@
         var sunInterval = 0;
         var timeStamp = Date.now();
         sunSimulationCheckBox.addEventListener("click", onSunCheckBoxClick);
+		wwd.addEventListener("contextmenu",isNeedstop_cjc);
+		
+		function isNeedstop_cjc(){
+			if(isNeedstop){
+				starPush=false;
+				isNeedstop=false;
+				isStaraddshapes=false;
+			}
+			if(shapeFinish){
+				shapesLayer = new WorldWind.RenderableLayer("Surface Shapes");
+				wwd.addLayer(shapesLayer);
+				var attributes = new WorldWind.ShapeAttributes(null);
+				attributes.outlineColor = WorldWind.Color.BLUE;
+				attributes.interiorColor = new WorldWind.Color(0, 1, 1, 0.5);
 
+				var highlightAttributes = new WorldWind.ShapeAttributes(attributes);
+				highlightAttributes.interiorColor = new WorldWind.Color(1, 1, 1, 1);
+
+				var shape = new WorldWind.SurfacePolygon(shapePositions, attributes);
+				shape.highlightAttributes = highlightAttributes;
+				shapesLayer.addRenderable(shape);
+				shapeFinish=false;
+			}
+		}
+		
         function onSunCheckBoxClick() {
             if (document.getElementById('sun-simulation').className=="list-group-item btn btn-block") {
                 runSunSimulation();
@@ -136,6 +203,11 @@
                 wwd.redraw();
             }, 64);
         }
+		
+		
+		
+		
+		
 		//clickRecognizer_cjc = new WorldWind.ClickRecognizer(wwd, handleClick_cjc);
 		//wwd.addEventListener("clickRecognizer",handleClick_cjc);
     });
@@ -290,5 +362,51 @@
 		pathsLayer=[];
 		layerCount_02=0;
 		pathPositions=[];
+	}
+	function quanFu(){
+		wwd.goTo(new WorldWind.Position(39.92, 116.37, 20000000));
+	}
+	function shuaXin(){
+		window.location.reload();
+	}
+	function addShapes_cjc(){
+		isStaraddshapes=true;
+	}
+	function removeShapes_cjc(){
+		wwd.removeLayer(shapesLayer);
+		for(var i=0;i<layerCount_03;i++){
+			wwd.removeLayer(shapeLayer[i]);
+		}
+		shapeLayer=[];
+		layerCount_03=0;
+		shapePositions=[];
+	}
+	function ipDingwei(){	
+		if (navigator.geolocation)
+		{
+			//alert("nono");
+			navigator.geolocation.getCurrentPosition(showPosition);
+			//alert("ok");
+		}
+		else{
+			alert("Geolocation is not supported by this browser.");
+		}
+		function showPosition(position)
+		{
+		//	alert("nono");
+			//alert("Latitude: " + position.coords.latitude +"Longitude: " + position.coords.longitude);
+			wwd.goTo(new WorldWind.Position(position.coords.latitude, position.coords.longitude, 2000));
+		}	
+	}
+	
+	function jiePing(){
+		/*function convertcanvasToImage(canvas){
+			var image=new Image();
+			image.src = canvas.toDataURL("image/png");
+			//alert(image.src);
+			console.log(image.src);
+			return image;
+		}
+		convertcanvasToImage(document.getElementById("canvasOne"));*/
 	}
 //document.getElementById("annotationList").style.display="none";
