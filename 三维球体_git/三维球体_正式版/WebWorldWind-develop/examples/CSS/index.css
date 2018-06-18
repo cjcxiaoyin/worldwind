@@ -1,0 +1,155 @@
+﻿ #line-chart {
+	height:300px;
+	width:800px;
+	margin: 0px auto;
+	margin-top: 1em;
+}
+#dashboard-menu{
+	padding-left:0;
+	padding-right:0;
+}
+.span2{
+	/*min-width:170px;*/
+}
+.brand { 
+font-family: georgia, serif; 
+}
+.brand .first {
+color: #ccc;
+font-style: italic;
+}
+.brand .second {
+color: #fff;
+font-weight: bold;
+}
+.a_right{
+float:right;
+}
+.row_cjc {
+margin-left: 15%;
+}
+.col-xs-6_cjc {
+float: left;
+width: 50%;
+position: relative;
+min-height: 1px;
+}
+.cjc_4_24_button{
+	
+	/* A semi-transparent text shadow */
+	text-shadow: 1px 1px 0 rgba(255,255,255,0.4);
+	
+	/* Overriding the default underline styling of the links */
+
+	white-space:nowrap;
+	display:inline-block;
+	vertical-align:baseline;
+	position:relative;
+	text-align: center; 
+	cursor:pointer;
+	/*padding:10px 73px;*/
+	padding-bottom:10px;
+	padding-top:10px;
+	width:100%;
+	background-repeat:no-repeat;
+
+	/* The following two rules are fallbacks, in case
+	   the browser does not support multiple backgrounds. */
+	background-position:bottom left;
+	background-image:url('button_bg.png');
+	
+	/* Multiple backgrounds version. The background images
+	   are defined individually in color classes */
+	background-position:bottom left, top right, 0 0, 0 0;
+	background-clip:border-box;
+	
+	/* Applying a default border raidus of 8px */
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	
+	/* A 1px highlight inside of the button */
+	-moz-box-shadow:0 0 1px #fff inset;
+	-webkit-box-shadow:0 0 1px #fff inset;
+	box-shadow:0 0 1px #fff inset;
+	
+	/* Animating the background positions with CSS3 */
+	/* Currently works only in Safari/Chrome */
+	-webkit-transition:background-position 1s;
+	-moz-transition:background-position 1s;
+	transition:background-position 1s;
+}
+.cjc_4_24_button:hover{
+	/* The first rule is a fallback, in case the browser
+	   does not support multiple backgrounds
+	*/
+	
+	background-position:top left;
+	background-position:top left, bottom right, 0 0, 0 0;
+}
+.cjc_4_24_button:active{
+	/* Moving the button 1px to the bottom when clicked */
+	bottom:-1px;
+}
+.cjc_4_24_button.cjc_4_24_small{
+	font-size:14px;
+}
+.cjc_4_24_gray.cjc_4_24_button{
+	/*color:#0088cc !important;*/
+	color:#800000 !important;
+	border:1px solid #a5a5a5 !important;	
+	background-color: #a9adb1;	
+	background-image:url('button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(197,199,202,1) 0,rgba(197,199,202,0) 100px),-moz-linear-gradient(#c5c7ca, #92989c);
+	background-image:url('button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(197,199,202,1)), to(rgba(197,199,202,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#c5c7ca), to(#92989c));
+}
+.cjc_4_24_gray.cjc_4_24_button:hover{
+	background-color:#b6bbc0;
+	
+	background-image:url('button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(202,205,208,1) 0,rgba(202,205,208,0) 100px),-moz-linear-gradient(#d1d3d6, #9fa5a9);
+	background-image:url('button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(202,205,208,1)), to(rgba(202,205,208,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#d1d3d6), to(#9fa5a9));
+}
+#cjc_4_24_panel{
+	position: absolute;
+    top: 0px;
+    right: 20px;
+    background: none 0px 0px repeat scroll rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-image: initial;
+    padding: 10px;
+	display:none;
+}
+.cjc_4_26_btn{
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.cjc_4_26_btn-primary{
+	color:#fff;
+	background-color:#337ab7;
+	border-color:#2e6da4;
+}
+
+.glyphicon-search:before {
+    content: "搜索";
+}
+#searchButton{
+	display:none;
+}
+input{
+	width:150px;
+}

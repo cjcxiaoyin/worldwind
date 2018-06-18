@@ -1,0 +1,18 @@
+﻿{
+  "main": "WebWorldWind-develop/examples/index.html",
+  "name": "虚拟三维仿真教学系统使用帮助",
+  "description": "demo app of node-webkit",
+  "version": "0.1.0",
+  "keywords": [ "demo", "node-webkit" ],
+  "window": {
+    "title": "node-webkit demo",
+    "icon": "link.png",
+    "toolbar": true,
+    "frame": true,
+    "width":  890,
+    "height": 500
+  },
+  "webkit": {
+    "plugin": true
+  }
+}
