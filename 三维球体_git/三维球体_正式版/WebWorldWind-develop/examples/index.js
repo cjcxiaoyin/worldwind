@@ -873,7 +873,7 @@ function cjcAddEffier(){//添加埃菲尔菲尔铁塔
     var colladaLoader = new WorldWind.ColladaLoader(position);
     colladaLoader.init({dirPath: './data/dae/埃菲尔铁塔/'});
 	for(var i=1;i<94;i++){
-    colladaLoader.load('https://cjcxiaoyin.oss-cn-shanghai.aliyuncs.com/dae/埃菲尔铁塔/埃菲尔铁塔'+i+'.dae', function (scene) {
+    colladaLoader.load('https://yulonggis1.oss-cn-hangzhou.aliyuncs.com/dae/埃菲尔铁塔/埃菲尔铁塔'+i+'.dae', function (scene) {
         scene.scale = 0.05;
 		//scene.zTranslation=-500;
 		//scene.xRotation=-75;
@@ -896,7 +896,7 @@ function cjcAddShui(){//添加水立方
     var colladaLoader = new WorldWind.ColladaLoader(position);
     colladaLoader.init({dirPath: './data/dae/水立方/'});
 	for(var i=1;i<58;i++){
-    colladaLoader.load('https://cjcxiaoyin.oss-cn-shanghai.aliyuncs.com/dae/水立方/水立方'+i+'.dae', function (scene) {
+    colladaLoader.load('https://yulonggis1.oss-cn-hangzhou.aliyuncs.com/dae/水立方/水立方'+i+'.dae', function (scene) {
         scene.scale = 0.05;
 		//scene.zTranslation=-500;
 		//scene.xRotation=-75;
@@ -919,7 +919,7 @@ function cjcAddXiYong(){//添加西庸城堡
     var colladaLoader = new WorldWind.ColladaLoader(position);
     colladaLoader.init({dirPath: './data/dae/西庸城堡/'});
 	for(var i=1;i<732;i++){
-    colladaLoader.load('https://cjcxiaoyin.oss-cn-shanghai.aliyuncs.com/dae/西庸城堡/西庸城堡'+i+'.dae', function (scene) {
+    colladaLoader.load('https://yulonggis1.oss-cn-hangzhou.aliyuncs.com/dae/西庸城堡/西庸城堡'+i+'.dae', function (scene) {
         scene.scale = 0.1;
 		//scene.zTranslation=-500;
 		//scene.xRotation=-75;
@@ -942,7 +942,7 @@ function cjcAddDaBenZhong(){//添加大本钟
     var colladaLoader = new WorldWind.ColladaLoader(position);
     colladaLoader.init({dirPath: './data/dae/大本钟/'});
 	for(var i=1;i<217;i++){
-    colladaLoader.load('https://cjcxiaoyin.oss-cn-shanghai.aliyuncs.com/dae/大本钟/大本钟'+i+'.dae', function (scene) {
+    colladaLoader.load('https://yulonggis1.oss-cn-hangzhou.aliyuncs.com/dae/大本钟/大本钟'+i+'.dae', function (scene) {
         scene.scale = 0.1;
 		//scene.zTranslation=-500;
 		//scene.xRotation=-75;
@@ -964,7 +964,7 @@ function cjcAddZiYou(){//添加自由女神像
 	var position =new WorldWind.Position(40.69,-74.044,0);
     var colladaLoader = new WorldWind.ColladaLoader(position);
     colladaLoader.init({dirPath: './data/dae/自由女神像/'});
-    colladaLoader.load('https://cjcxiaoyin.oss-cn-shanghai.aliyuncs.com/dae/自由女神像/自由女神像.dae', function (scene) {
+    colladaLoader.load('https://yulonggis1.oss-cn-hangzhou.aliyuncs.com/dae/自由女神像/自由女神像.dae', function (scene) {
         scene.scale = 0.1;
 		scene.zTranslation=-1000;
         modelLayer.addRenderable(scene);
@@ -985,7 +985,7 @@ function cjcAddZhongGuoZun(){//添加中国尊
     var colladaLoader = new WorldWind.ColladaLoader(position);
     colladaLoader.init({dirPath: './data/dae/中国尊/'});
 	for(var i=1;i<12;i++){
-    colladaLoader.load('https://cjcxiaoyin.oss-cn-shanghai.aliyuncs.com/dae/中国尊/中国尊'+i+'.dae', function (scene) {
+    colladaLoader.load('https://yulonggis1.oss-cn-hangzhou.aliyuncs.com/dae/中国尊/中国尊'+i+'.dae', function (scene) {
         scene.scale = 0.05;
 		//scene.zTranslation=-500;
 		//scene.xRotation=-75;
@@ -1008,7 +1008,7 @@ function cjcAddRenMinYingXiongJiNianBei(){//添加人民英雄纪念碑
     var colladaLoader = new WorldWind.ColladaLoader(position);
     colladaLoader.init({dirPath: './data/dae/人民英雄纪念碑/'});
 	for(var i=1;i<228;i++){
-    colladaLoader.load('https://cjcxiaoyin.oss-cn-shanghai.aliyuncs.com/dae/人民英雄纪念碑/人民英雄纪念碑'+i+'.dae', function (scene) {
+    colladaLoader.load('https://yulonggis1.oss-cn-hangzhou.aliyuncs.com/dae/人民英雄纪念碑/人民英雄纪念碑'+i+'.dae', function (scene) {
         scene.scale = 0.1;
 		//scene.zTranslation=-500;
 		//scene.xRotation=-75;
